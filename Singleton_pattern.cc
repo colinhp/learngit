@@ -77,6 +77,5 @@ int main(void)
 	printf("p = %p \n", p);  //这输出的是创建的对象的地址 单例模式 地址是一个
 	printf("p1= %p \n", p1);
 
-
 	return 0;
 }
