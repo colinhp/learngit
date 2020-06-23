@@ -25,11 +25,11 @@ public:
 
 	void print()
 	{
-		cout<< "print()"<< endl;
+		cout<< "Singleton::print()"<< endl;
 	}
 
 
-	void destroy()
+	static void destroy()
 	{
 		cout << "destroy()" <<endl;
 		if(_pInstance)
