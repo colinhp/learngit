@@ -88,6 +88,7 @@ void test1(void)
 }
 
 //3、测试下文件输入输出流   终端写入到---->文件　　　在从从文件读出到---->终端
+//要注意流的状态是否正确！！！！
 void test2(void)
 {
 	fstream fs;
@@ -99,7 +100,7 @@ void test2(void)
 		return;
 	}
 	
-	int number;
+	int number;  //for循环变量外的变量　　生命周期　一直是５
 	for(int idx =0;idx != 5;++idx)  //１２３４５输出到　test2.txt 文件文件中
 	{
 		cin >>number;
@@ -112,7 +113,7 @@ void test2(void)
 
 	for(int idx= 0;idx != 5;++idx) // test2.text 文件中的内容　输入到终端
 	{
-		fs >> number;
+		fs >> number; //现需输出５个５的原因：文件游标到末尾　流的输入状态是bad的　　可以查看下流的状态　此时是不能向number写入的
 		cout <<number << " "<<endl;
 	}
 
